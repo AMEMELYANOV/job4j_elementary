@@ -3,9 +3,7 @@ package ru.job4j.calculate;
 import org.junit.Assert;
 import org.junit.Test;
 
-
 public class X2Test {
-
     @Test
     public void whenA10B0C0X1Then40() {
         /* Входные параметры. Их будет 4 штуки */
@@ -54,7 +52,6 @@ public class X2Test {
         int c = 0;
         int x = 1;
         int expected = 2;
-
 
         int rsl = X2.calc(a, b, c, x);
         Assert.assertEquals(expected, rsl);
