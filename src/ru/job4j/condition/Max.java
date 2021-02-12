@@ -11,6 +11,6 @@ public class Max {
     }
 
     public static int max(int first, int second, int third, int fourth) {
-        return first >= max(second, third, fourth) ? first : max(second, third, fourth);
+        return max(first, max(second, third, fourth));
     }
 }
