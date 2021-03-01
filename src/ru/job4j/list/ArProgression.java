@@ -1,28 +1,18 @@
 package ru.job4j.list;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
 
 public class ArProgression {
     public static int checkData(List<Integer> data) {
-        int result = 0;
-        ListIterator<Integer> iterator = data.listIterator();
-//        System.out.println(iterator.next());
-        iterator.next();
-        while (iterator.hasNext()) {
-            int temp = iterator.next();
-            if ((iterator.previous() + iterator.next()) / 2 != temp) {
-                break;
+        List<Integer> list = new ArrayList(data);
+        int sum = list.get(0);
+        for (int i = 1; i < list.size() - 1; i++) {
+            if ((list.get(i - 1) + list.get(i + 1)) / 2 != list.get(i)) {
+                return 0;
             }
+            sum += list.get(i);
         }
-        return 0;
-    }
-
-    public static void main(String[] args) {
-        List<Integer> data = List.of(
-                1, 6, 11, 16, 21,
-                26, 31, 36, 41, 46
-        );
-        checkData(data);
+        return sum + list.get(list.size() - 1);
     }
 }
